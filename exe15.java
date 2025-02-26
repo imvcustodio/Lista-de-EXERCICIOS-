@@ -15,44 +15,46 @@ public class exe15 {
         System.out.print("Digite um valor para passarmos a relação de nota(s): ");
         double valor = scanner.nextDouble();
 
-        int Money = (int) valor; // Parte inteira (notas)
-        int centavos = (int) Math.round((valor - Money) * 100); // Parte decimal convertida para centavos
+        int money = (int) valor; // Pego somente parte inteira do valor digitado pelo usuario
+        int centavos = (int) Math.round((valor - money) * 100); // aqui eu subtraio do valor total, somente a parte inteira para que 
+        //fique mais facil de conseguir fazer os calculo com os centavos, apos isso eu multiplico por 100, para fica um num inteiro e poder fazer as 
+        // divisoes sem numeros doubles somente com valores inteiros como, 50 para 50 centavos, 25 pra 25 centavos e etc.
 
-        int N100 = Money / 100;
-        Money %= 100;
+        int N100 = money / 100; // divido o valor inteiro por 100 e armazeno o valor de quantidade de divisoes possiveis na var N100(qnt de nota 100)
+        money %= 100;//caso a divisao fo 299/100 = 2 pois o resto n e divisivel por 100 ent o money recebe o resto da divisao por 100 no caso 99
 
-        int N50 = Money / 50;
-        Money %= 50;
+        int N50 = money / 50;
+        money %= 50;
 
-        int N20 = Money / 20;
-        Money %= 20;
+        int N20 = money / 20;
+        money %= 20;
 
-        int N10 = Money / 10;
-        Money %= 10;
+        int N10 = money / 10;
+        money %= 10;
 
-        int N5 = Money / 5;
-        Money %= 5;
+        int N5 = money / 5;
+        money %= 5;
 
-        int N2 = Money / 2;
-        Money %= 2;
+        int N2 = money / 2;
+        money %= 2;
 
-        int M1 = Money;
+        int M1 = money;
 
         int M0_5 = centavos / 50;
-        centavos = centavos % 50;
+        centavos %= 50;
 
         int M0_25 = centavos / 25;
-        centavos = centavos % 25;
+        centavos %= 25;
 
         int M0_10 = centavos / 10;
-        centavos = centavos % 10;
+        centavos %= 10;
 
         int M0_05 = centavos / 5;
-        centavos = centavos % 5;
+        centavos %= 5;
 
         int M0_01 = centavos;
 
-        System.out.printf("O numero exibido foi: %d\n", Money);
+        System.out.printf("O numero exibido foi: %d\n", money);
         System.out.printf("O numero de notas de 100 foi: %d\n", N100);
         System.out.printf("O numero de notas de 50 foi: %d\n", N50);
         System.out.printf("O numero de notas de 20 foi: %d\n", N20);
