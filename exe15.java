@@ -16,7 +16,7 @@ public class exe15 {
         double valor = scanner.nextDouble();
 
         int money = (int) valor; // Pego somente parte inteira do valor digitado pelo usuario
-        int centavos = (int) Math.round((valor - money) * 100); // aqui eu subtraio do valor total, somente a parte inteira para que 
+        int centavos = (int) Math.floor((valor - money) * 100); // aqui eu subtraio do valor total, somente a parte inteira para que 
         //fique mais facil de conseguir fazer os calculo com os centavos, apos isso eu multiplico por 100, para fica um num inteiro e poder fazer as 
         // divisoes sem numeros doubles somente com valores inteiros como, 50 para 50 centavos, 25 pra 25 centavos e etc.
 
